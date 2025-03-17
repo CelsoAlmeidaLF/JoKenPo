@@ -8,6 +8,24 @@ namespace JoKenPo
 {
     internal class Game
     {
+        public static void LoadGame()
+        {
+            paths = new Dictionary<string, string>();
+            string _ = "../../../images/", png = ".png";
+            string[] imagens = {
+                "papel", 
+                "pedra", 
+                "tesoura",
+                "lagarto",
+                "spock", 
+            };
+
+            foreach(string img in imagens)
+                paths.Add(img, $"{_}{img}{png}");
+        }
+
+        public static Dictionary<string, string> paths = new();
+
         public static Image[] images =
         {
             Image.FromFile("../../../images/papel.png"),
